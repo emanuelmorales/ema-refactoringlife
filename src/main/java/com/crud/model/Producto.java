@@ -19,10 +19,14 @@ public class Producto {
     private String nombre;
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
-    @Column(name = "id_marca", nullable = false)
-    private Long idMarca;
     @Column(name = "fecha_baja")
     private Timestamp fechaBaja;
-    @Column(name = "id_tipo_producto")
-    private Long idTipoProducto;
+
+    @ManyToOne
+    @JoinColumn(name="id_marca", nullable=false)
+    private Marca marca;
+
+    @ManyToOne
+    @JoinColumn(name="id_tipo_producto", nullable=false)
+    private TipoProducto tipoProducto;
 }

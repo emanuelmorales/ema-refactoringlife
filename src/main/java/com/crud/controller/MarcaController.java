@@ -1,4 +1,4 @@
-package com.crud.controller;
+giypackage com.crud.controller;
 
 import com.crud.model.Marca;
 import com.crud.service.MarcaService;
@@ -15,12 +15,6 @@ public class MarcaController {
 
     @Autowired
     private MarcaService marcaService;
-
-    @GetMapping("/prueba")
-    public String Crud	(){
-
-        return "Refactoring life - Backend";
-    }
 
     @GetMapping("/obtenerTodasMarca")
     public ResponseEntity<List<Marca>> obtenerTodasMarca() {
@@ -45,6 +39,4 @@ public class MarcaController {
         marcaService.eliminarMarca(id);
         return ResponseEntity.noContent().build();
     }
-
-
 }
